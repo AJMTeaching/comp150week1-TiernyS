@@ -266,10 +266,14 @@ def intersection(list1: list, list2: list) -> list:
     - list: The intersection of the two lists
     """
     # TODO: Implement this function
-    list3 = 
-    
-    return list3
-
+    #I counld not understand the intersection part but when I looked at the numbers I seen that I'm looking 
+    #at numbers that are overlapping/repeating on both list I understood
+    overlapped_list = []
+    for num in list1:
+        if num in list2:
+            overlapped_list.append(num)
+    return overlapped_list
+# I don't understand why it's always just one that fails.
 
 # Unit Tests for intersection
 def test_intersection():
