@@ -40,9 +40,27 @@ for key, value in person.items():
 
 # -----------------------------------------------------------------------------
 
+# Homework 1
+# Number 1
+
+
+# Number 2
+
+
+# Number 3
+
+
+# Number 4
+
+
+# Number 5
+
+
 
 # Importing sys for test function
+from abc import ABC
 import sys
+from unittest import result
 
 
 # Custom Test Function
@@ -65,7 +83,20 @@ def count_vowels(s: str) -> int:
     - int: The number of vowels in the string
     """
     # TODO: Implement this function
-    pass
+
+    #count_vowels = vowel = "aeiouAEIO"
+    #for vowel in s[str:]:
+        #count_vowels[vowel] = count_vowels.get(vowel, 0) + 1
+        #return count_vowels
+    count = 0
+    vowels = set("aeiouAEIOU")
+    for vowel in s:
+        if vowel in vowels:
+            count += 1
+    return count
+
+
+
 
 
 # Unit Tests for count_vowels
@@ -94,8 +125,44 @@ def merge_lists(list1: list, list2: list) -> list:
     Returns:
     - list: A new sorted list containing all elements from list1 and list2
     """
+    # I know that the smallest values are always the leftmost
+    # I know that this means they will have the lowest indeces starting from 0
+    # I need a new list, to put the lowest values in, as I find them
+    # merged_list = []
+
+    # Whatever my loop conditions are
+    # the next step is going to be comparing a[0] and b[0]
+    # and I can store these ) values in variables
+    # I will call them index_1 and index_2
+
+    # I will ckeck if a[index_1] or b[index_2] is lessor
+    # and then 
     # TODO: Implement this function
-    pass
+    if not list1:
+        return list2
+    if not list2:
+        return list1
+    merged_list = []
+    i1, i2 = 0, 0
+    while len(merged_list) < len(list1) + len(list2):
+        if list1[i1] < list2[i2]:
+            merged_list.append(list1[i1])
+            if i1 + 1 == len(list1):
+                for item in list2[i2:]:
+                    merged_list.append(item)
+            else:
+                i1 += 1
+        else:
+            merged_list.append(list2[i2])
+            if i2 + 1 == len(list2):
+                for item in list1[i1:]:
+                    merged_list.append(item)
+            else:
+                i2 += 1
+    return(merged_list)
+
+        
+
 
 
 # Unit Tests for merge_lists
@@ -126,7 +193,21 @@ def word_lengths(words: list) -> list:
     - list: A list containing the lengths of the words
     """
     # TODO: Implement this function
-    pass
+    #words = []
+    #lengths = []
+    #for word in words:
+       # lengths.append(len(word))
+    #return lengths
+    #words = []
+    #lengths = 0
+    #for word in words:
+        #word.append(len(lengths))
+    #return word
+    list = [] # I'm telling it the list in there -> []
+    for word in words: # So the words in the list
+        list.append(len(word)) # So add the the length of the words to the list
+    return list # print the length of words to the list
+    #return [len(word) for word in words] #lol even CHATGPT failed it
 
 
 # Unit Tests for word_lengths
@@ -136,7 +217,7 @@ def test_word_lengths():
     test(lengths == [5, 5, 6])
     test(word_lengths([]) == [])
     test(word_lengths(["word"]) == [4])
-    test(word_lengths(["short", "mediummm", "longesttttt"]) == [5, 8, 10])
+    test(word_lengths(["short", "mediummm", "longesttttt"]) == [5, 8, 11])
     test(word_lengths(["", "a", "ab", "abc"]) == [0, 1, 2, 3])
     test(word_lengths(["  ", "a b", " c "]) == [2, 3, 3])
 
@@ -153,7 +234,10 @@ def reverse_string(s: str) -> str:
     - str: The reversed string
     """
     # TODO: Implement this function
-    pass
+    return s[::-1]
+    # for x in my_strings:
+    # print(x)
+    # pass
 
 
 # Unit Tests for reverse_string
@@ -182,7 +266,9 @@ def intersection(list1: list, list2: list) -> list:
     - list: The intersection of the two lists
     """
     # TODO: Implement this function
-    pass
+    list3 = 
+    
+    return list3
 
 
 # Unit Tests for intersection
